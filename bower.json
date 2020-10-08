@@ -1,0 +1,10 @@
+{
+    "name": "html2canvas",
+    "version": "1.0.0-rc.7",
+    "description": "Screenshots with JavaScript",
+    "main": "dist/html2canvas.js",
+    "ignore": [
+        "tests",
+        ".travis.yml"
+    ]
+}

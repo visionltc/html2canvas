@@ -1,4 +1,4 @@
-/dist
+dist/*
 /tmp
 /build
 /nbproject/
@@ -17,3 +17,5 @@ debug.log
 tests/reftests.js
 *.log
 .rpt2_cache
+!dist/html2canvas.js
+!dist/html2canvas.min.js
