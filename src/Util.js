@@ -20,7 +20,7 @@ window.html2canvas = function(elements, opts) {
     useOverflow: true,
     letterRendering: false,
     chinese: false,
-
+    imgOverride: null,
     // render options
 
     width: null,

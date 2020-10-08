@@ -2404,7 +2404,12 @@ _html2canvas.Preload = function( options ) {
           };
           images.numTotal++;
           setImageLoadHandlers(img, imageObj);
-          img.src = src;
+          if (typeof options.imgOverride === "function") {
+            img.src = options.imgOverride(src);
+          }
+          else {
+            img.src = src;
+          }
         } else if ( options.proxy ) {
           imageObj = images[src] = {
             img: img
@@ -2678,7 +2683,7 @@ window.html2canvas = function(elements, opts) {
     useOverflow: true,
     letterRendering: false,
     chinese: false,
-
+    imgOverride: null,
     // render options
 
     width: null,

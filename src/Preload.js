@@ -229,7 +229,12 @@ _html2canvas.Preload = function( options ) {
           };
           images.numTotal++;
           setImageLoadHandlers(img, imageObj);
-          img.src = src;
+          if (typeof options.imgOverride === "function") {
+            img.src = options.imgOverride(src);
+          }
+          else {
+            img.src = src;
+          }
         } else if ( options.proxy ) {
           imageObj = images[src] = {
             img: img
