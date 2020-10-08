@@ -1,8 +1,8 @@
 /*
-  html2canvas 0.4.1 <http://html2canvas.hertzen.com>
-  Copyright (c) 2013 Niklas von Hertzen
+  <%= pkg.title || pkg.name %> <%= pkg.version %><%= pkg.homepage ? " <" + pkg.homepage + ">" : "" %>
+  Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>
 
-  Released under MIT License
+  Released under <%= _.pluck(pkg.licenses, "type").join(", ") %> License
 */
 
 (function(window, document, undefined){
