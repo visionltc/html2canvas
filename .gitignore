@@ -1,4 +1,4 @@
-/dist
+dist/*
 /build
 /nbproject/
 image.jpg
@@ -15,3 +15,5 @@ npm-debug.log
 debug.log
 tests/reftests.js
 *.log
+!dist/html2canvas.js
+!dist/html2canvas.min.js
