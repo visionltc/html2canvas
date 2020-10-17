@@ -54,7 +54,19 @@ _html2canvas.Renderer.Canvas = function(options) {
           case "drawImage":
             if (item['arguments'][8] > 0 && item['arguments'][7] > 0) {
               if (!options.taintTest || (options.taintTest && safeImage(item))) {
+                if (item['arguments'][0].tagName == 'CANVAS') {
+                  try {
+                    item['arguments'][0].toDataURL("image/png");
+                    ctx.drawImage.apply( ctx, item['arguments'] );
+                  }
+                  catch (e) {
+
+                  }
+                }
+                else {
                 ctx.drawImage.apply( ctx, item['arguments'] );
+                ctx.canvas.toDataURL("image/png");
+                }
               }
             }
             break;
